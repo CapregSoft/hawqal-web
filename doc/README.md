@@ -1,34 +1,105 @@
-# docsify
 
-<p style="font-weight:bold; color:#858585;"><blockquote> A magical documentation site generator.
-</blockquote></p>
+# Introduction
 
-# What it is 
-Docsify generates your documentation website on the fly. Unlike GitBook, it does not generate static html files. Instead, it smartly loads and parses your Markdown files and displays them as a website. To start using it, all you need to do is create an 
-<span style="color:#e96900; 
-    border-radius: 2px;
-    margin: 0 2px;
-    padding: 3px 5px;">
-index.html
-</span> <a href="#" >and deploy it on GitHub Pages.</a>
+The <span style="font-weight:bold; color:#000000;">`world-countries-states-cities`</span> package is a library that provides a list of countries, states, and cities in the world. It is available in Node.js, Go, and Python.
 
-# Features
+# Installation
+## Node JS
+To install the package in Node.js, run the following command:
+
+```code
+npm install world-countries-states-cities
+```
+## Go
+
+To install the package in Go, run the following command:
+
+```code
+go get github.com/world-countries-states-cities/world-countries-states-cities
+```
+## Python
+
+To install the package in Python, run the following command:
+
+```code
+pip install world-countries-states-cities
+```
+# Usage
+## Getting a list of countries
+To get a list of all countries, you can use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function. This function returns an array of objects, each representing a country. The objects have the following properties:
+
 <ul>
-<li>No statically built html files</li>
-<li>Simple and lightweight</li>
-<li>Smart full-text search plugin</li>
-<li>Multiple themes</li>
-<li>Useful plugin API</li>
-<li>Emoji support</li>
-<li>Compatible with IE11</li>
-<li>Support server-side rendering <span class="color:#42b983;">(example)</span></li>
+<li>`<span style="font-weight:bold">name</span>`: The name of the country.</li>
+<li>`<span style="font-weight:bold">code</span>`: The two-letter code for the country.</li>
 </ul>
 
+Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function in <span style="font-weight:bold; color:#000000;">`NodeJs`</span>:
 
-# Donate
-Please consider donating if you think docsify is helpful to you or that my work is valuable. I am happy if you can help me buy a cup of coffee. heart
+``` code
+const { getCountries } = require('world-countries-states-cities');
 
-# Community
-Users and the development team are usually in the Discord server.
+const countries = getCountries();
+console.log(countries);
+```
 
-Powered by docsify
+Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function in <span style="font-weight:bold; color:#000000;">`Go`</span>:
+
+``` code
+package main
+import (
+	"fmt"
+	"github.com/world-countries-states-cities/world-countries-states-cities"
+)
+
+func main() {
+	countries := worldcountriesstatescities.GetCountries()
+	fmt.Println(countries)
+}
+```
+
+Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`get_countries()`</span> function in <span style="font-weight:bold; color:#000000;">`Python`</span>:
+
+```code
+from world_countries_states_cities import get_countries
+
+countries = get_countries()
+print(countries)
+```
+## Getting a list of states for a specific country
+    To get a list of states for a specific country, you can use the <span style="font-weight:bold; color:#000000;">`getStates(countryCode)`</span> function. This function takes a two-letter country code as an argument and returns an array of objects, each representing a state. The objects have the following properties:
+
+    <ul>
+    <li>`<span style="font-weight:bold">name</span>`: The name of the country.</li>
+    <li>`<span style="font-weight:bold">code</span>`: The two-letter code for the country.</li>
+    </ul>
+
+    Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function in <span style="font-weight:bold; color:#000000;">`NodeJs`</span>:
+
+``` code
+const { getStates } = require('world-countries-states-cities');
+
+const states = getStates('US');
+console.log(states);
+```
+
+Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function in <span style="font-weight:bold; color:#000000;">`Go`</span>:
+
+``` code
+package main
+
+import (
+	"fmt"
+	"github.com/world-countries-states-cities/world-countries-states-cities"
+)
+func main() {
+	states
+```
+
+Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`get_countries()`</span> function in <span style="font-weight:bold; color:#000000;">`Python`</span>:
+
+```code
+from world_countries_states_cities import get_countries
+
+countries = get_countries()
+print(countries)
+```

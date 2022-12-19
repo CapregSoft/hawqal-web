@@ -1,13 +1,11 @@
 
 ![logo](icon.svg)
 
-# Hawqal <small>1.0</small>
+# Hawqal <small>beta</small>
 
-> A magical documentation site generator.
+> A packge use to get countries,city and states.
 
-- Simple and lightweight (21kb zippesd)
-- No statically built html files
-- Multiple themes
+- Simple and lightweight
 
 [GitHub](https://github.com/CapregSoft)
 [Get Started](#docsify)

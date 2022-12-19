@@ -8,10 +8,20 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    .dark-theme {
+      --bg-color: #222;
+      --text-color: #fff;
+    }
 
+    .light-theme {
+      --bg-color: #fff;
+      --text-color: #222;
+    }
+  </style>
 </head>
 
-<body>
+<body class="dark-theme">
   <div id="app"></div>
   <script>
     window.$docsify = {
@@ -19,7 +29,6 @@
       repo: '',
       coverpage: true,
       search: 'auto',
-      loadSidebar: true,
       subMaxLevel: 3,
       search: {
         maxAge: 86400000,
@@ -28,7 +37,7 @@
         noData: 'No Results!',
         depth: 6,
         hideOtherSidebarContent: false,
-        text:"Docsify"
+        text: "Docsify"
       }
     }
   </script>
