@@ -81,6 +81,11 @@ const getCities = async () => {
   console.log(await worldData.getCitiesByStateName('punjab'));
 }
 getCities();
+
+const getCitieByCountry = async () => {
+  console.log(await worldData.getCitiesByCountryName('Finland'));
+}
+getCitieByCountry();
 ```
 
 ## Go
@@ -249,7 +254,7 @@ To install the package in Python, run the following command:
 ## Installation
 
 ```code
-  pip install world-countries-states-cities
+  pip install hawqal
 ```
 ### Usage/Example
 #### Getting a list of countries
@@ -273,7 +278,7 @@ To get a list of all Cities, you can use the <span style="font-weight:bold; colo
 ```
 <span style="font-weight:bold;"> Success Response</span>
 ```
-  ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
+  ['Haripur','Abbotabad','Topi',........]
 ```
 #### Getting a list of States
 To get a list of all States, you can use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function.
@@ -297,5 +302,5 @@ To get a list of all States, you can use the <span style="font-weight:bold; colo
 ```
 <span style="font-weight:bold;"> Success Response</span>
 ```code
-   ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
+   ['Haripur','Abbotabad','WahCantt','Topi',........]
 ```
