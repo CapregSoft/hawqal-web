@@ -8,4 +8,4 @@
 - Simple and lightweight
 
 [GitHub](https://github.com/CapregSoft)
-[Get Started](#docsify)
+[Get Started](#introduction)
