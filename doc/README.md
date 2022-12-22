@@ -70,7 +70,6 @@ getStates();
 
 Use `async` and `await` to get a meaningful response.
 
-
 #### Cities By State & Country Name
 
 To get a list of cities for a specific state, use the `getCitiesByStateName` function:
