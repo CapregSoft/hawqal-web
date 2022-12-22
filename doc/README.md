@@ -91,192 +91,211 @@ getCities();
 To install Hawqal, run the following command:
 
 ```code
-https://github.com/CapregSoft/Hawqal-go
+go get github.com/CapregSoft/Hawqal-go
 ```
 ### Functions
 
-- `Get Countries`
-- `Get States`
-- `Get Cities`
-- `Get Cities By State`
+- `Get All Countries`
+- `Get All Cities`
+- `Get All States`
 - `Get State By Country`
 - `Get Cities By Country`
+- `Get Cities By State`
 
 ### Usage/Examples
 
-#### Getting Started
+#### Get Started
 ```code
 package main
 
 import (
-     "fmt"
-      hawqal "gihtub.com/CapregSoft/Hawqal-go"
-     "log"
+  "fmt"
+   hawqal "gihtub.com/CapregSoft/Hawqal-go"
+  "log"
 )
 ```
-#### All Countries
+#### Get All Countries
 
 
-To get a list of all countries, use the `hawqal.GetCountriesData()` function:
+To get a list of all countries, use the `hawqal.GetCountriesData()` function whch returns countries & error.
 
 ```code
-func main(){
-    countries, err := hawqal.GetCountriesData()
-	if err != nil {
-		log.Fatalf("Error %v", err)
-	}
-	fmt.Print("Country")
-	for _, country := range countries {
-		fmt.Printf("ID :: %v - Country :: %v\n", *country.CountryID, *country.CountryName)
-	}
+  countries, err := hawqal.GetCountriesData()
+  if err != nil {
+    log.Fatalf("Error %v", err)
+  }
+  fmt.Print("Country")
+  for _, country := range countries {
+    fmt.Printf("ID :: %v - Country :: %v\n", *country.CountryID, *country.CountryName)
+  }
 ```
  <span style="font-weight:bold;"> Success Response</span>
 ```
-{}
-```
- <span style="font-weight:bold;"> Error Response</span>
-```code
-{}
-```
-hawqal.GetStatesData()
+  {
+    Countries : ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', . . . ]
+  }
 
-#### All States
+```
+
+#### Get All Cities
+
+To get a list of all countries, use the `hawqal.GetCitiesData()` function whch returns countres & error.
+
+```code
+  cities, err := hawqal.GetCitiesData()
+	if err != nil {
+		log.Fatalf("Error %v", err)
+	}
+
+	fmt.Print("Cities")
+	for _, city := range cities {
+		fmt.Printf("City :: %v - Country :: %v \n", *city.CityName, *city.CountryName)
+	}
+  ```
+
+ <span style="font-weight:bold;"> Success Response</span>
+```
+  {
+    Cities : ['Haripur','Abbotabad','WahCantt','Topi',........]
+  }
+
+```
+
+#### Get All States
 
 
 To get a list of all states, use the `hawqal.GetStatesData()` function:
 
 ```code
-    countries, err := hawqal.GetCountriesData()
-	if err != nil {
-		log.Fatalf("Error %v", err)
-	}
-	fmt.Print("Country")
+    states, err := hawqal.GetStatesData()
+    if err != nil {
+      log.Fatalf("Error %v", err)
+    }
 
-	for _, country := range countries {
-		//the variable country holds the one country name &  its specific Id
-		fmt.Printf("ID :: %v - Country :: %v\n", *country.CountryID, *country.CountryName)
-	}
-```
+    fmt.Print("States")
+    for _, state := range states {
+      fmt.Printf("State :: %v - Country :: %v \n", *state.StateName, *state.CountryName)
+    }
+  ```
  <span style="font-weight:bold;"> Success Response</span>
 ```
 {
-
+  States : ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
 }
 ```
- <span style="font-weight:bold;"> Error Response</span>
+#### Get States By Country Name
+
+To get a list of states for a specific country, use the `GetStatesByCountry` function:
+
 ```code
-{ }
+  statesByCountry, err := hawqal.GetStatesByCountry(countryName)
+	if err != nil {
+		log.Fatalf("Error %v", err)
+	}
+	fmt.Printf("states: %v  ", statesByCountry)
 ```
-#### States By Country Name
-
-To get a list of states for a specific country, use the `getAllStatesByCountryName` function:
-
-```code
-const worldData = require('@capregsoft/hawqal')
-const getStates = async () => {
-  console.log(await worldData.getAllStatesByCountryName('pakistan'));
+<span style="font-weight:bold;"> Success Response</span>
+```
+{
+  States : ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
 }
-getStates();
 ```
 
-Use `async` and `await` to get a meaningful response.
+#### Get Cities By Country
 
-
-#### Cities By State & Country Name
-
-To get a list of cities for a specific state, use the `getCitiesByStateName` function:
+To get a list of cities for a specific state, use the `GetCitiesByCountryData` function:
 
 ```code
-const worldData = require('@capregsoft/hawqal')
-const getCities = async () => {
-  console.log(await worldData.getCitiesByStateName('punjab'));
-}
-getCities();
+  citiesByCountry, err := hawqal.GetCitiesByCountryData(citiesCountryName)
+  if err != nil {
+    log.Fatalf("Error %v", err)
+  }
+  fmt.Print("Cities For Country ", citiesCountryName)
+  for _, city := range citiesByCountry {
+    fmt.Printf("City :: %v \n", *city.CityName)
+  }
+```
+<span style="font-weight:bold;"> Success Response</span>
+```
+  {
+    Cities : ['Haripur','Abbotabad','WahCantt','Topi',........]
+  }
 ```
 
+#### Get Cities By State
+To get a list of cities for a specific state, use the `GetCitiesByState` function:
+
+```code 
+  citiesByState, err := hawqal.GetCitiesByState(stateName)
+	if err != nil {
+		log.Fatalf("Error %v", err)
+	}
+
+	fmt.Print("Cities For State ", stateName)
+	for _, city := range citiesByState {
+		fmt.Printf("City :: %v \n", *city.CityName)
+	}
+```
+<span style="font-weight:bold;"> Success Response</span>
+```
+{
+  Cities : ['Haripur','Abbotabad','WahCantt','Topi',........]
+}
+```
 ## Python
 
 To install the package in Python, run the following command:
 
-```code
-pip install world-countries-states-cities
-```
-# Usage
-## Getting a list of countries
-To get a list of all countries, you can use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function. This function returns an array of objects, each representing a country. The objects have the following properties:
-
-<ul>
-<li>`<span style="font-weight:bold">name</span>`: The name of the country.</li>
-<li>`<span style="font-weight:bold">code</span>`: The two-letter code for the country.</li>
-</ul>
-
-Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function in <span style="font-weight:bold; color:#000000;">`NodeJs`</span>:
-
-``` code
-const { getCountries } = require('world-countries-states-cities');
-
-const countries = getCountries();
-console.log(countries);
-```
-
-Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function in <span style="font-weight:bold; color:#000000;">`Go`</span>:
-
-``` code
-package main
-import (
-	"fmt"
-	"github.com/world-countries-states-cities/world-countries-states-cities"
-)
-
-func main() {
-	countries := worldcountriesstatescities.GetCountries()
-	fmt.Println(countries)
-}
-```
-
-Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`get_countries()`</span> function in <span style="font-weight:bold; color:#000000;">`Python`</span>:
+## Installation
 
 ```code
-from world_countries_states_cities import get_countries
-
-countries = get_countries()
-print(countries)
+  pip install world-countries-states-cities
 ```
-## Getting a list of states for a specific country
-    To get a list of states for a specific country, you can use the <span style="font-weight:bold; color:#000000;">`getStates(countryCode)`</span> function. This function takes a two-letter country code as an argument and returns an array of objects, each representing a state. The objects have the following properties:
-
-    <ul>
-    <li>`<span style="font-weight:bold">name</span>`: The name of the country.</li>
-    <li>`<span style="font-weight:bold">code</span>`: The two-letter code for the country.</li>
-    </ul>
-
-    Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function in <span style="font-weight:bold; color:#000000;">`NodeJs`</span>:
+### Usage/Example
+#### Getting a list of countries
+To get a list of all countries, you can use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function.
 
 ``` code
-const { getStates } = require('world-countries-states-cities');
+  from hawqal.country import Country
+  Country.getCountries()
 
-const states = getStates('US');
-console.log(states);
 ```
-
-Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function in <span style="font-weight:bold; color:#000000;">`Go`</span>:
+<span style="font-weight:bold;"> Success Response</span>
+```
+  ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', . . . ]
+```
+#### Getting a list of Cities
+To get a list of all Cities, you can use the <span style="font-weight:bold; color:#000000;">`getCities()`</span> function.
 
 ``` code
-package main
+  from hawqal.cities import City
+  City.getCities("countries name", "state")
+```
+<span style="font-weight:bold;"> Success Response</span>
+```
+  ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
+```
+#### Getting a list of States
+To get a list of all States, you can use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function.
 
-import (
-	"fmt"
-	"github.com/world-countries-states-cities/world-countries-states-cities"
-)
-func main() {
-	states
+``` code
+  from hawqal.states import StatesByCountry
+  StatesByCountry.getStates()
 ```
 
-Here is an example of how to use the <span style="font-weight:bold; color:#000000;">`get_countries()`</span> function in <span style="font-weight:bold; color:#000000;">`Python`</span>:
-
+<span style="font-weight:bold;"> Success Response</span>
 ```code
-from world_countries_states_cities import get_countries
+   ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
+```
 
-countries = get_countries()
-print(countries)
+#### Getting Cities By Country
+To get a list of all States, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
+
+``` code
+  from hawqal.citiesbycountry import CitiesByCountry
+  CitiesByCountry.getCities("country name")
+```
+<span style="font-weight:bold;"> Success Response</span>
+```code
+   ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
 ```
