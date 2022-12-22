@@ -71,7 +71,7 @@ getStates();
 Use `async` and `await` to get a meaningful response.
 
 
-#### Cities By State Name & Cities by Country Name
+#### Cities By State & Country Name
 
 To get a list of cities for a specific state, use the `getCitiesByStateName` function:
 
@@ -83,22 +83,117 @@ const getCities = async () => {
 getCities();
 ```
 
-
-
-
-
-
-
-```code
-npm install world-countries-states-cities
-```
 ## Go
 
-To install the package in Go, run the following command:
+
+### Installation
+
+To install Hawqal, run the following command:
 
 ```code
-go get github.com/world-countries-states-cities/world-countries-states-cities
+https://github.com/CapregSoft/Hawqal-go
 ```
+### Functions
+
+- `Get Countries`
+- `Get States`
+- `Get Cities`
+- `Get Cities By State`
+- `Get State By Country`
+- `Get Cities By Country`
+
+### Usage/Examples
+
+#### Getting Started
+```code
+package main
+
+import (
+     "fmt"
+      hawqal "gihtub.com/CapregSoft/Hawqal-go"
+     "log"
+)
+```
+#### All Countries
+
+
+To get a list of all countries, use the `hawqal.GetCountriesData()` function:
+
+```code
+func main(){
+    countries, err := hawqal.GetCountriesData()
+	if err != nil {
+		log.Fatalf("Error %v", err)
+	}
+	fmt.Print("Country")
+	for _, country := range countries {
+		fmt.Printf("ID :: %v - Country :: %v\n", *country.CountryID, *country.CountryName)
+	}
+```
+ <span style="font-weight:bold;"> Success Response</span>
+```
+{}
+```
+ <span style="font-weight:bold;"> Error Response</span>
+```code
+{}
+```
+hawqal.GetStatesData()
+
+#### All States
+
+
+To get a list of all states, use the `hawqal.GetStatesData()` function:
+
+```code
+    countries, err := hawqal.GetCountriesData()
+	if err != nil {
+		log.Fatalf("Error %v", err)
+	}
+	fmt.Print("Country")
+
+	for _, country := range countries {
+		//the variable country holds the one country name &  its specific Id
+		fmt.Printf("ID :: %v - Country :: %v\n", *country.CountryID, *country.CountryName)
+	}
+```
+ <span style="font-weight:bold;"> Success Response</span>
+```
+{
+
+}
+```
+ <span style="font-weight:bold;"> Error Response</span>
+```code
+{ }
+```
+#### States By Country Name
+
+To get a list of states for a specific country, use the `getAllStatesByCountryName` function:
+
+```code
+const worldData = require('@capregsoft/hawqal')
+const getStates = async () => {
+  console.log(await worldData.getAllStatesByCountryName('pakistan'));
+}
+getStates();
+```
+
+Use `async` and `await` to get a meaningful response.
+
+
+#### Cities By State & Country Name
+
+To get a list of cities for a specific state, use the `getCitiesByStateName` function:
+
+```code
+const worldData = require('@capregsoft/hawqal')
+const getCities = async () => {
+  console.log(await worldData.getCitiesByStateName('punjab'));
+}
+getCities();
+```
+
 ## Python
 
 To install the package in Python, run the following command:
