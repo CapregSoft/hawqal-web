@@ -1,4 +1,3 @@
-* [Home](home.md)
-* [Langauge](language.md)
-
-
+* [Go](go.md)
+* [Node](node.md)
+* [Python](python.md)

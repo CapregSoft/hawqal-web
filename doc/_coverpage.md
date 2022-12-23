@@ -8,4 +8,4 @@
 - Simple and lightweight
 
 [GitHub](https://github.com/CapregSoft)
-[Get Started](#introduction)
+[Get Started](go.md)
