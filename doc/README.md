@@ -293,7 +293,7 @@ To get a list of all States, you can use the <span style="font-weight:bold; colo
 ```
 
 #### Getting Cities By Country
-To get a list of all States, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
+To get a list of all Countries, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 
 ``` code
   from hawqal.citiesbycountry import CitiesByCountry
@@ -302,4 +302,28 @@ To get a list of all States, you can use the <span style="font-weight:bold; colo
 <span style="font-weight:bold;"> Success Response</span>
 ```code
    ['Haripur','Abbotabad','WahCantt','Topi',........]
+```
+
+#### Getting Cities By State
+To get a list of all Cities By State, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
+
+``` code
+  from hawqal.cities import City
+  City.getCities("", "state")
+```
+<span style="font-weight:bold;"> Success Response</span>
+```code
+   ['Haripur','Abbotabad','WahCantt','Topi',........]
+```
+
+#### Getting States by Country
+To get a list of all states by country, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
+
+``` code
+  from hawqal.states import StatesByCountry
+  StatesByCountry.getStates("country name")
+```
+<span style="font-weight:bold;"> Success Response</span>
+```code
+   ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
 ```
