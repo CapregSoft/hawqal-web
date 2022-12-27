@@ -7,7 +7,7 @@ To install the package in Python, run the following command:
 ```code
   pip install hawqal
 ```
-#### Usage/Example
+### Usage/Example
 
 #### Getting a list of Countries
 To get a list of all countries, you can use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function.
@@ -47,7 +47,6 @@ To get a list of all States, you can use the <span style="font-weight:bold; colo
    ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
 ```
 
-#
 #### Getting Cities By Country
 To get a list of all Countries, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 
@@ -60,7 +59,6 @@ To get a list of all Countries, you can use the <span style="font-weight:bold; c
    ['Haripur','Abbotabad','WahCantt','Topi',........]
 ```
 
-#
 #### Getting Cities By State
 To get a list of all Cities By State, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 
