@@ -8,4 +8,4 @@
 - Simple and lightweight
 
 [GitHub](https://github.com/CapregSoft)
-[Get Started](go/index.md)
+[Get Started](hawqal-web/go/index.md)
