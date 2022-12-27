@@ -27,12 +27,6 @@
     window.$docsify = {
       name: '',
       repo: '',
-      coverpage: true,
-      search: 'auto',
-      loadSidebar: true,
-      subMaxLevel: 100,
-      auto2top: true,
-      routerDefaultLandingPage: 'home.md',
       search: {
         maxAge: 86400000,
         paths: 'auto',
@@ -41,7 +35,14 @@
         depth: 6,
         hideOtherSidebarContent: false,
         text: "Docsify"
-      }
+      },
+      coverpage: true,
+      search: 'auto',
+      loadSidebar: true,
+      relativepath:false,
+      subMaxLevel: 100,
+      auto2top: true,
+      routerDefaultLandingPage: 'go/index.md',
     }
   </script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
