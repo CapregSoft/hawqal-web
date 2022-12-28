@@ -1,6 +1,6 @@
 
 
-![logo](icon.svg)
+![logo](hawqal-1.svg)
 
 # Hawqal <small>beta</small>
 
