@@ -9,6 +9,16 @@ To install the package in Python, run the following command:
 ```code
   pip install hawqal
 ```
+
+### Functions
+
+- `Get a list of Countries`
+- `Getting a list of Cities`
+- `Getting a list of States`
+- `Getting Cities By Country`
+- `Getting Cities By State`
+- `Getting States by Country`
+
 ### Usage/Example
 
 #### Getting a list of Countries
