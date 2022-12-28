@@ -13,10 +13,7 @@ The <span style="font-weight:bold; color:#000000;">`hawqal`</span> package is a 
 - Get cities by state
 
 
-<p><a href="https://github.com/CapregSoft/hawqal-web/blob/master/docs/go.md" target="_blank" rel="noopener"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8.png" alt="memo" class="emoji" loading="lazy"> Edit Document</a></p>
-
-
-<span style="font-size:40px;">Go</span>
+## Go
 
 
 ### Installation
@@ -63,6 +60,7 @@ To get a list of all countries, use the `hawqal.GetCountriesData()` function whc
   }
 ```
  <span style="font-weight:bold;"> Success Response</span>
+
 ```
   {
     Countries : ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', . . . ]
@@ -178,7 +176,7 @@ To get a list of cities for a specific state, use the `GetCitiesByState` functio
 
 
 
-<span style="font-size:40px;">Node Js</span>
+## Node Js
 
 ### Installation
 
