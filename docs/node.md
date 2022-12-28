@@ -70,19 +70,23 @@ getStates();
   'Sindh'
 ]
 ```
+
 #### Cities By State & Country Name
 
-To get a list of cities for a specific state or country, use the `getCities` function:
+To get a list of cities for a specific state,cities or country, use the `getCities` parameterized function:
 
 ```code
 const worldData = require('@capregsoft/hawqal')
 const getCities = async () =>{
      //get all cities
     console.log(await await index.getCities());
+
     //get state cities
     console.log(await await index.getCities('','punjab'));
+
     //get country cities
     console.log(await await index.getCities('pakistan'));
+
     //get country,state cities
     console.log(await await index.getCities('pakistan','punjab'));
 }

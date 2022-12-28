@@ -177,7 +177,8 @@ To get a list of cities for a specific state, use the `GetCitiesByState` functio
 ```
 
 
-## Node Js
+
+<span style="font-size:40px;">Node Js</span>
 
 ### Installation
 
@@ -186,74 +187,106 @@ To install Hawqal, run the following command:
 ```code
 npm i @capregsoft/hawqal
 ```
-### Usage/Examples
 
+### Functions
+
+- `Get Countries`
+- `Get Cities`
+- `Get States`
+
+
+### Usage/Examples
+Use `Asyc` and `await` to get meaningful response
 #### All Countries
 
 
-To get a list of all countries, use the `getAllCountries` function:
+To get a list of all countries, use the `getCountries` function:
 
 ```code
 const worldData = require('@capregsoft/hawqal')
-const getCountries = async () => {
-  console.log(await worldData.getAllCountries());
+const getData = async () =>{
+    console.log(await worldData.getCountries());
 }
-getCountries();
+getData();
 ```
  <span style="font-weight:bold;"> Success Response</span>
-
-
 ```
-{
-  data: [
-    { country_id: 1, country_name: 'Afghanistan' },
-    { country_id: 2, country_name: 'Aland Islands' },
-    { country_id: 3, country_name: 'Albania' },
-    { country_id: 4, country_name: 'Algeria' },
-    { country_id: 5, country_name: 'American Samoa' },
-    { country_id: 6, country_name: 'Andorra' },
-    { country_id: 7, country_name: 'Angola' }
-    ...
-  ]
-}
-```
- <span style="font-weight:bold;"> Error Response</span>
-```code
-{ data: [] }
+ [
+  'Afghanistan',
+  'Aland Islands',
+  'Albania',
+  'Algeria',
+  'American Samoa',
+  'Andorra',
+  'Angola',
+  'Anguilla',...
+]
 ```
 
-#### States By Country Name
 
-To get a list of states for a specific country, use the `getAllStatesByCountryName` function:
+#### All States
+
+To get a list of all countries, use the `getStates` function:
 
 ```code
 const worldData = require('@capregsoft/hawqal')
-const getStates = async () => {
-  console.log(await worldData.getAllStatesByCountryName('pakistan'));
+const getStates = async () =>{
+    console.log(await await index.getStates('pakistan'));
 }
 getStates();
 ```
-
-Use `async` and `await` to get a meaningful response.
-
+ <span style="font-weight:bold;"> Success Response</span>
+```
+[
+  'Azad Kashmir',
+  'Balochistan',
+  'Federally Administered Tribal Areas',
+  'Gilgit-Baltistan',
+  'Islamabad Capital Territory',
+  'Khyber Pakhtunkhwa',
+  'Punjab',
+  'Sindh'
+]
+```
 #### Cities By State & Country Name
 
-To get a list of cities for a specific state, use the `getCitiesByStateName` function:
+To get a list of cities for a specific state, cities or country, use the `getCities` parameterized function:
 
 ```code
 const worldData = require('@capregsoft/hawqal')
-const getCities = async () => {
-  console.log(await worldData.getCitiesByStateName('punjab'));
+const getCities = async () =>{
+     //get all cities
+    console.log(await await index.getCities());
+
+    //get state cities
+    console.log(await await index.getCities('','punjab'));
+    
+    //get country cities
+    console.log(await await index.getCities('pakistan'));
+    
+    //get country,state cities
+    console.log(await await index.getCities('pakistan','punjab'));
 }
 getCities();
-
-const getCitieByCountry = async () => {
-  console.log(await worldData.getCitiesByCountryName('Finland'));
-}
-getCitieByCountry();
+```
+ <span style="font-weight:bold;"> Success Response</span>
+```
+[
+  'Fatehgarh Sahib', 'Firozpur',     'Firozpur District',
+  'Fazilka',         'Gardhiwala',   'Garhshankar',
+  'Ghanaur',         'Giddarbaha',   'Gurdaspur',
+  'Guru Har Sahai',  'Hariana',      'Hoshiarpur',
+  'Hajipur',         'Jagraon',      'Jaito',
+]
 ```
 
-## Python
+ <span style="font-weight:bold;"> Error Response</span>
+```code
+[]
+Db connection Error!!!
+```
+
+<span style="font-size:40px;">Python</span>
 
 To install the package in Python, run the following command:
 
@@ -262,7 +295,17 @@ To install the package in Python, run the following command:
 ```code
   pip install hawqal
 ```
-#### Usage/Example
+
+### Functions
+
+- `Getting a list of Countries`
+- `Getting a list of Cities`
+- `Getting a list of States`
+- `Getting Cities By Country`
+- `Getting Cities By State`
+- `Getting States by Country`
+
+### Usage/Example
 
 #### Getting a list of Countries
 To get a list of all countries, you can use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function.
@@ -302,7 +345,6 @@ To get a list of all States, you can use the <span style="font-weight:bold; colo
    ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
 ```
 
-#
 #### Getting Cities By Country
 To get a list of all Countries, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 
@@ -315,7 +357,6 @@ To get a list of all Countries, you can use the <span style="font-weight:bold; c
    ['Haripur','Abbotabad','WahCantt','Topi',........]
 ```
 
-#
 #### Getting Cities By State
 To get a list of all Cities By State, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 

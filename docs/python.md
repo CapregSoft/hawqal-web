@@ -12,7 +12,7 @@ To install the package in Python, run the following command:
 
 ### Functions
 
-- `Get a list of Countries`
+- `Getting a list of Countries`
 - `Getting a list of Cities`
 - `Getting a list of States`
 - `Getting Cities By Country`
