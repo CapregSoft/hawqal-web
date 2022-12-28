@@ -2,7 +2,6 @@
 
 ![logo](hawqal-1.svg)
 
-# Hawqal <small>beta</small>
 
 > A packge use to get countries,city and states.
 
