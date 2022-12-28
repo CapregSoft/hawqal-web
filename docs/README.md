@@ -91,9 +91,7 @@ To get a list of all cities, use the `hawqal.GetCitiesData()` function whch retu
   }
 
 ```
-
 #### Get All States
-
 
 To get a list of all states, use the `hawqal.GetStatesData()` function:
 
@@ -224,7 +222,7 @@ getData();
 
 #### All States
 
-To get a list of all countries, use the `getStates` function:
+To get a list of all states, use the `getStates` function:
 
 ```code
 const worldData = require('@capregsoft/hawqal')
@@ -281,8 +279,8 @@ getCities();
  <span style="font-weight:bold;"> Error Response</span>
 ```code
 []
-Db connection Error!!!
 ```
+Db connection Error!!!
 
 <span style="font-size:40px;">Python</span>
 

@@ -48,7 +48,7 @@ getData();
 
 #### All States
 
-To get a list of all countries, use the `getStates` function:
+To get a list of all states, use the `getStates` function:
 
 ```code
 const worldData = require('@capregsoft/hawqal')
@@ -106,5 +106,5 @@ getCities();
  <span style="font-weight:bold;"> Error Response</span>
 ```code
 []
-Db connection Error!!!
 ```
+Db connection Error!!!
