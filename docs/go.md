@@ -57,7 +57,7 @@ To get a list of all countries, use the `hawqal.GetCountriesData()` function whc
 
 #### Get All Cities
 
-To get a list of all countries, use the `hawqal.GetCitiesData()` function whch returns countres & error.
+To get a list of all cities, use the `hawqal.GetCitiesData()` function whch returns cities & error.
 
 ```code
   cities, err := hawqal.GetCitiesData()
@@ -121,7 +121,7 @@ To get a list of states for a specific country, use the `GetStatesByCountry` fun
 
 #### Get Cities By Country
 
-To get a list of cities for a specific state, use the `GetCitiesByCountryData` function:
+To get a list of cities for a specific country, use the `GetCitiesByCountryData` function:
 
 ```code
   citiesByCountry, err := hawqal.GetCitiesByCountryData(citiesCountryName)

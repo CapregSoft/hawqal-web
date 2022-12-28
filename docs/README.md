@@ -13,7 +13,10 @@ The <span style="font-weight:bold; color:#000000;">`hawqal`</span> package is a 
 - Get cities by state
 
 
-## Go
+<p><a href="https://github.com/CapregSoft/hawqal-web/blob/master/docs/go.md" target="_blank" rel="noopener"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8.png" alt="memo" class="emoji" loading="lazy"> Edit Document</a></p>
+
+
+<span style="font-size:40px;">Go</span>
 
 
 ### Installation
@@ -69,7 +72,7 @@ To get a list of all countries, use the `hawqal.GetCountriesData()` function whc
 
 #### Get All Cities
 
-To get a list of all countries, use the `hawqal.GetCitiesData()` function whch returns countres & error.
+To get a list of all cities, use the `hawqal.GetCitiesData()` function whch returns cities & error.
 
 ```code
   cities, err := hawqal.GetCitiesData()
@@ -133,7 +136,7 @@ To get a list of states for a specific country, use the `GetStatesByCountry` fun
 
 #### Get Cities By Country
 
-To get a list of cities for a specific state, use the `GetCitiesByCountryData` function:
+To get a list of cities for a specific country, use the `GetCitiesByCountryData` function:
 
 ```code
   citiesByCountry, err := hawqal.GetCitiesByCountryData(citiesCountryName)
@@ -172,6 +175,7 @@ To get a list of cities for a specific state, use the `GetCitiesByState` functio
   Cities : ['Haripur','Abbotabad','WahCantt','Topi',........]
 }
 ```
+
 
 ## Node Js
 
