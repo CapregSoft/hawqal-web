@@ -1,5 +1,4 @@
-<span style="font-size:40px;">Go</span>
-
+# Go
 
 ### Installation
 

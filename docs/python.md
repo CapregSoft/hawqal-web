@@ -1,5 +1,5 @@
 
-<span style="font-size:40px;">Python</span>
+# Python
 
 To install the package in Python, run the following command:
 
