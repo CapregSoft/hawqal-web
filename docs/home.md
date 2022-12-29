@@ -1,10 +1,10 @@
 
 # Hawqal
 
-<p style="font-weight:bold; color:#858585;"><blockquote> A documentation site of a package for getting countries, cities, and states     Information.
+<p style="font-weight:bold; color:#858585;"><blockquote> A documentation site of a package for getting countries, cities and states Information.
 </blockquote></p>
 
-# What it is 
+# What it is? 
 Hawqal is a powerful tool for accessing and working with information about countries, cities, and states. It is available in Go, Node, and Python and offers a variety of functions and features to help you quickly and easily retrieve and work with this data. To start using it, all you need to do is install it 
 in your project
 
