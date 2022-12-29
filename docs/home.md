@@ -18,6 +18,13 @@ in your project
 <li>Get Cities By State</li>
 </ul>
 
+# Avaliable Languages 
+<ul>
+<li><a href="#/go.md">Go</a></li>
+<li><a href="#/node.md">Node</a></li>
+<li><a href="#/python.md">Python</a></li>
+</ul>
+
 # Contact Us
 Contact us at www.capregsoft.com
 Powered by capregsoft
