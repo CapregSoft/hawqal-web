@@ -1,5 +1,3 @@
-<p><a href="https://github.com/CapregSoft/hawqal-web/blob/master/docs/node.md" target="_blank" rel="noopener"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8.png" alt="memo" class="emoji" loading="lazy"> Edit Document</a></p>
-
 <span style="font-size:40px;">Node Js</span>
 
 ### Installation
