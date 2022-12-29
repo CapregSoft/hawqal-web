@@ -1,5 +1,3 @@
-<p><a href="https://github.com/CapregSoft/hawqal-web/blob/master/docs/README.md" target="_blank" rel="noopener"><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8.png" alt="memo" class="emoji" loading="lazy"> Edit Document</a></p>
-
 # Introduction
 
 The <span style="font-weight:bold; color:#000000;">`hawqal`</span> package is a library that provides a list of countries, states, and cities in the world. It is available in Node.js, Go, and Python.
