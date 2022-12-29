@@ -6,6 +6,6 @@
 
 
 [GitHub](https://github.com/CapregSoft)
-[Get Started](go.md)
+[Get Started](/?id=hawqal)
 
 ![](background.png)
