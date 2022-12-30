@@ -1,6 +1,6 @@
 ![logo](hawqal-1.svg)
 
-> A package used to retrieve lists of countries, cities and states.
+> A package to retrieve lists of countries, cities and states.
 
 - Your go-to source for global data
 
