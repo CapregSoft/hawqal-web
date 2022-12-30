@@ -1,9 +1,8 @@
 ![logo](hawqal-1.svg)
 
-> A packge use to get countries, city and states.
+> A package used to retrieve lists of countries, cities and states.
 
-- Simple and lightweight
-
+- Your go-to source for global data
 
 [GitHub](https://github.com/CapregSoft)
 [Get Started](/?id=hawqal)
