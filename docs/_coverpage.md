@@ -2,7 +2,7 @@
 
 > A package used to retrieve lists of countries, cities and states.
 
-- Standalone and Simple
+- Your go-to source for global data
 
 [GitHub](https://github.com/CapregSoft)
 [Get Started](/?id=hawqal)
