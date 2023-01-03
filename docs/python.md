@@ -1,95 +1,128 @@
 
-# js
+# Python
 
-To install the package in js, run the following command:
+To install the package in Python, run the following command:
 
 ### Installation
 
-```js
-  pip install hawqal
-```
+- windows
+    ```python
+    pip install hawqal
+    ```
+- macos/linux
+    ```python
+    pip3 install hawqal
+    ```
+- Latest version
+    ```python
+    pip install --upgrade hawqal
+    ```
 
 ### Functions
 
-- `Getting a list of Countries`
-- `Getting a list of Cities`
-- `Getting a list of States`
-- `Getting Cities By Country`
-- `Getting Cities By State`
-- `Getting States by Country`
+- `getCountries( )`
+- `getCities()`
+- `getStates()`
 
-### Usage/Example
+## Usage/Example
+### Countries Module
+- #### Returns List of Countries
 
-#### Getting a list of Countries
-To get a list of all countries, you can use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function.
+```python
+   import hawqal
+   hawqal.getCountries()
+```
+- Success Response
+    ```python
+    ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria',...]
+    ```
+- #### Returns True Attributes of Countries
 
-```js
-  from hawqal.country import Country
-  Country.getCountries()
+```python
+   import hawqal
+   hawqal.getCountries({"coordinates":True,"currency":True,"region":False})
+```
+- Success Response
+    ```python
+    ['Pakistan', '30', '70', 'PKR', 'Pakistani rupee', '₨']
+    ```
+### Cities Module
+- #### Returns List of Cities
 
+```Python
+   import hawqal
+   hawqal.getCities()
 ```
-<span style="font-weight:bold;"> Success Response</span>
-```
-  ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', . . . ]
-```
+- Success Response
+    ```python
+    ['Islamabad','Karachi','Dehli','Mumbai',...]
+    ```
+- #### Returns Cities By Country
 
-#### Getting a list of Cities
-To get a list of all Cities, you can use the <span style="font-weight:bold; color:#000000;">`getCities()`</span> function.
+```Python
+   import hawqal
+   hawqal.getCities("pakistan")
+```
+- Success Response
+    ```python
+    ['Abbottabad', 'Adilpur', 'Ahmadpur Sial',...]
+    ```
+- #### Returns Cities By States
 
-```js
-  from hawqal.cities import City
-  City.getCities("countries name", "state")
+```Python
+   import hawqal
+   hawqal.getCities("arizona")
 ```
-<span style="font-weight:bold;"> Success Response</span>
-```
-  ['Haripur','Abbotabad','Topi',........]
-```
+- Success Response
+    ```python
+    ['Ahwatukee Foothills', 'Ajo', 'Alhambra',...]
+    ```
 
-#### Getting a list of States
-To get a list of all States, you can use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function.
+- #### Returns True Attributes of Cities
 
-```js
-  from hawqal.states import StatesByCountry
-  StatesByCountry.getStates()
+```Python
+   import hawqal
+   hawqal.getCities("arizona",{"coordinates":True})
 ```
+- Success Response
+    ```python
+    [
+        ['Ahwatukee Foothills', '33.34171', '-111.98403'],
+        ['Ajo', '32.37172', '-112.86071'],
+        ['Alhambra', '33.49838', '-112.13432'],...
+    ]
+    ```
+### States Module
+- #### Returns List of States
 
-<span style="font-weight:bold;"> Success Response</span>
+```python
+  import hawqal
+  hawqal.getStates()
 ```
-   ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
+- Success Response
+```python
+   ['Alabama', 'Alaska', 'American Samoa', 'Arizona',...]
 ```
+- #### Returns States By Country
 
-#### Getting Cities By Country
-To get a list of all Cities By Country, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
+```python
+  import hawqal
+  hawqal.getStates()
+```
+- Success Response
+```python
+   ['Azad Kashmir', 'Balochistan', 'Federally Administered Tribal Areas', 'Gilgit-Baltistan', 'Islamabad Capital Territory',...]
+```
+- #### Returns True Attributes of States
 
-``` js
-  from hawqal.citiesbycountry import CitiesByCountry
-  CitiesByCountry.getCities("country name")
+```python
+  import hawqal
+  hawqal.getStates("pakistan",{"coordinates":True})
 ```
-<span style="font-weight:bold;"> Success Response</span>
-```
-   ['Haripur','Abbotabad','WahCantt','Topi',........]
-```
-
-#### Getting Cities By State
-To get a list of all Cities By State, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
-
-```js
-  from hawqal.cities import City
-  City.getCities("", "state")
-```
-<span style="font-weight:bold;"> Success Response</span>
-```
-   ['Haripur','Abbotabad','WahCantt','Topi',........]
-```
-
-#### Getting States by Country
-To get a list of all States By Country, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
-
-```js
-  from hawqal.states import StatesByCountry
-  StatesByCountry.getStates("country name")
-```
-<span style="font-weight:bold;"> Success Response</span>
-```
-   ['Alabama', 'Alaska', 'American Samoa', 'Arizona', . . . ]
+- Success Response
+```python
+   [
+       ['Azad Kashmir', '33.9259055', '73.7810334'],
+       ['Balochistan', '28.4907332', '65.0957792'],...
+   ]
 ```
