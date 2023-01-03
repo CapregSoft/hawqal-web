@@ -1,11 +1,11 @@
 
-# js
+# py
 
-To install the package in js, run the following command:
+To install the package in py, run the following command:
 
 ### Installation
 
-```js
+```py
   pip install hawqal
 ```
 
@@ -23,7 +23,7 @@ To install the package in js, run the following command:
 #### Getting a list of Countries
 To get a list of all countries, you can use the <span style="font-weight:bold; color:#000000;">`getCountries()`</span> function.
 
-```js
+```py
   from hawqal.country import Country
   Country.getCountries()
 
@@ -36,7 +36,7 @@ To get a list of all countries, you can use the <span style="font-weight:bold; c
 #### Getting a list of Cities
 To get a list of all Cities, you can use the <span style="font-weight:bold; color:#000000;">`getCities()`</span> function.
 
-```js
+```py
   from hawqal.cities import City
   City.getCities("countries name", "state")
 ```
@@ -48,7 +48,7 @@ To get a list of all Cities, you can use the <span style="font-weight:bold; colo
 #### Getting a list of States
 To get a list of all States, you can use the <span style="font-weight:bold; color:#000000;">`getStates()`</span> function.
 
-```js
+```py
   from hawqal.states import StatesByCountry
   StatesByCountry.getStates()
 ```
@@ -61,7 +61,7 @@ To get a list of all States, you can use the <span style="font-weight:bold; colo
 #### Getting Cities By Country
 To get a list of all Cities By Country, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 
-``` js
+``` py
   from hawqal.citiesbycountry import CitiesByCountry
   CitiesByCountry.getCities("country name")
 ```
@@ -73,7 +73,7 @@ To get a list of all Cities By Country, you can use the <span style="font-weight
 #### Getting Cities By State
 To get a list of all Cities By State, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 
-```js
+```py
   from hawqal.cities import City
   City.getCities("", "state")
 ```
@@ -85,7 +85,7 @@ To get a list of all Cities By State, you can use the <span style="font-weight:b
 #### Getting States by Country
 To get a list of all States By Country, you can use the <span style="font-weight:bold; color:#000000;">`CitiesByCountry()`</span> function.
 
-```js
+```py
   from hawqal.states import StatesByCountry
   StatesByCountry.getStates("country name")
 ```
