@@ -1,11 +1,11 @@
-# js
+# go
 
 ### Installation
 
 To install Hawqal, run the following command:
 
-```js
-js get github.com/CapregSoft/Hawqal-js
+```go
+go get github.com/CapregSoft/Hawqal-go
 ```
 ### Functions
 
@@ -19,12 +19,12 @@ js get github.com/CapregSoft/Hawqal-js
 ### Usage/Examples
 
 #### Get Started
-```js
+```go
 package main
 
 import (
   "fmt"
-   hawqal "gihtub.com/CapregSoft/Hawqal-js"
+   hawqal "gihtub.com/CapregSoft/Hawqal-go"
   "log"
 )
 ```
@@ -33,7 +33,7 @@ import (
 
 To get a list of all countries, use the `hawqal.GetCountriesData()` function whch returns countries & error.
 
-```js
+```go
   countries, err := hawqal.GetCountriesData()
   if err != nil {
     log.Fatalf("Error %v", err)
@@ -55,7 +55,7 @@ To get a list of all countries, use the `hawqal.GetCountriesData()` function whc
 
 To get a list of all cities, use the `hawqal.GetCitiesData()` function whch returns cities & error.
 
-```js
+```go
   cities, err := hawqal.GetCitiesData()
 	if err != nil {
 		log.Fatalf("Error %v", err)
@@ -80,7 +80,7 @@ To get a list of all cities, use the `hawqal.GetCitiesData()` function whch retu
 
 To get a list of all states, use the `hawqal.GetStatesData()` function:
 
-```js
+```go
     states, err := hawqal.GetStatesData()
     if err != nil {
       log.Fatalf("Error %v", err)
@@ -101,7 +101,7 @@ To get a list of all states, use the `hawqal.GetStatesData()` function:
 
 To get a list of states for a specific country, use the `GetStatesByCountry` function:
 
-```js
+```go
   statesByCountry, err := hawqal.GetStatesByCountry(countryName)
 	if err != nil {
 		log.Fatalf("Error %v", err)
@@ -119,7 +119,7 @@ To get a list of states for a specific country, use the `GetStatesByCountry` fun
 
 To get a list of cities for a specific country, use the `GetCitiesByCountryData` function:
 
-```js
+```go
   citiesByCountry, err := hawqal.GetCitiesByCountryData(citiesCountryName)
   if err != nil {
     log.Fatalf("Error %v", err)
@@ -139,7 +139,7 @@ To get a list of cities for a specific country, use the `GetCitiesByCountryData`
 #### Get Cities By State
 To get a list of cities for a specific state, use the `GetCitiesByState` function:
 
-```js 
+```go 
   citiesByState, err := hawqal.GetCitiesByState(stateName)
 	if err != nil {
 		log.Fatalf("Error %v", err)
