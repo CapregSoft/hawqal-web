@@ -4,7 +4,7 @@
 
 To install Hawqal, run the following command:
 
-```code
+```js
 npm i @capregsoft/hawqal
 ```
 
@@ -22,7 +22,7 @@ Use `Asyc` and `await` to get meaningful response
 
 To get a list of all countries, use the `getCountries` function:
 
-```code
+```js
 const worldData = require('@capregsoft/hawqal')
 const getData = async () =>{
     console.log(await worldData.getCountries());
@@ -48,7 +48,7 @@ getData();
 
 To get a list of all states, use the `getStates` function:
 
-```code
+```js
 const worldData = require('@capregsoft/hawqal')
 const getStates = async () =>{
     console.log(await await index.getStates('pakistan'));
@@ -73,7 +73,7 @@ getStates();
 
 To get a list of cities for a specific state,cities or country, use the `getCities` parameterized function:
 
-```code
+```js
 const worldData = require('@capregsoft/hawqal')
 const getCities = async () =>{
      //get all cities
@@ -102,7 +102,7 @@ getCities();
 ```
 
  <span style="font-weight:bold;"> Error Response</span>
-```code
+```js
 []
 ```
 Db connection Error!!!
