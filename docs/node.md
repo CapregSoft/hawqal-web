@@ -14,20 +14,22 @@ npm i @capregsoft/hawqal
 - `Get Cities`
 - `Get States`
 
-
 ### Usage/Examples
-Use `Asyc` and `await` to get meaningful response
-#### Countries
 
+Use `Asyc` and `await` to get meaningful response
+
+#### Countries
 
 To get a list of all countries, use the `getCountries` function:
 
 ```js
-const worldData = require('@capregsoft/hawqal')
+const worldData = require("@capregsoft/hawqal");
 const getData = async () => console.log(await worldData.getCountries());
 getData();
 ```
- <span style="font-weight:bold;"> Success Response</span>
+
+<span style="font-weight:bold;"> Success Response</span>
+
 ```
  [
   { country_name: 'Afghanistan' },
@@ -38,12 +40,25 @@ getData();
   ....
  ]
 ```
+
 To get a list of countries with specific fields put `object` parameter in `getCountries`
-```country filter fields
-const getCountriesField = async ()=> console.log(await worldData.getCountries({coordinates:true,region:true,currency:true,capital:true,timezone:true}))
-getCountriesField()
+
+```js
+const getCountriesField = async () =>
+  console.log(
+    await worldData.getCountries({
+      coordinates: true,
+      region: true,
+      currency: true,
+      capital: true,
+      timezone: true,
+    })
+  );
+getCountriesField();
 ```
+
 <span style="font-weight:bold;"> Success Response</span>
+
 ```
  [
    {
@@ -66,12 +81,24 @@ getCountriesField()
   ....
  ]
 ```
-To get specific country and specific fields put parameters `country` and `object` in `get countries` 
-```specific country & filter fields
-const getCountry = async (countryName)=> console.log(await worldData.getCountries(countryName,{coordinates:true,currency:true,capital:true,timezone:false}))
-getCountry('findland')
+
+To get specific country and specific fields put parameters `country` and `object` in `get countries`
+
+```js
+const getCountry = async (countryName) =>
+  console.log(
+    await worldData.getCountries(countryName, {
+      coordinates: true,
+      currency: true,
+      capital: true,
+      timezone: false,
+    })
+  );
+getCountry("findland");
 ```
+
 <span style="font-weight:bold;"> Success Response</span>
+
 ```
  [
   {
@@ -96,7 +123,9 @@ To get a list of all states, use the `getStates` function:
 const allStates = async () => console.log(await worldData.getStates());
 allStates();
 ```
- <span style="font-weight:bold;"> Success Response</span>
+
+<span style="font-weight:bold;"> Success Response</span>
+
 ```
 [
   { state_name: 'Badakhshan', country_name: 'Afghanistan' },
@@ -107,13 +136,16 @@ allStates();
 ]
 ```
 
-To get a list of all states of specific country and  use the `getStates` function and put some parameter:
+To get a list of all states of specific country and use the `getStates` function and put some parameter:
 
-```get states by country name
-const allStatesCountry = async (country) => console.log(await worldData.getStates(country,{coordinates:true}));
-allStatesCountry('finland');
+```js
+const allStatesCountry = async (country) =>
+  console.log(await worldData.getStates(country, { coordinates: true }));
+allStatesCountry("finland");
 ```
- <span style="font-weight:bold;"> Success Response</span>
+
+<span style="font-weight:bold;"> Success Response</span>
+
 ```
 [
   {
@@ -140,25 +172,30 @@ allStatesCountry('finland');
 ]
 ```
 
-
 #### Cities By State & Country Name
 
 To get a list of cities for a specific state,cities or country, use the `getCities` parameterized function:
 
 ```js
-const getCities = async () =>{
-     //get all cities
-    console.log(await worldData.getCities());
-    //get country cities
-    console.log(await  worldData.getCities('finland'));
-    //get country,state cities
-    console.log(await  worldData.getCities('finland','Finland Proper'));
-    //get country,state cities and get fields
-    console.log(await worldData.getCities('finland','Finland Proper',{coordinates:true}));
-}
+const getCities = async () => {
+  //get all cities
+  console.log(await worldData.getCities());
+  //get country cities
+  console.log(await worldData.getCities("finland"));
+  //get country,state cities
+  console.log(await worldData.getCities("finland", "Finland Proper"));
+  //get country,state cities and get fields
+  console.log(
+    await worldData.getCities("finland", "Finland Proper", {
+      coordinates: true,
+    })
+  );
+};
 getCities();
 ```
- <span style="font-weight:bold;"> Success Response</span>
+
+<span style="font-weight:bold;"> Success Response</span>
+
 ```
 [
   {
@@ -190,8 +227,10 @@ getCities();
 ]
 ```
 
- <span style="font-weight:bold;"> Error Response</span>
+<span style="font-weight:bold;"> Error Response</span>
+
 ```js
-[]
+[];
 ```
+
 Db connection Error!!!
