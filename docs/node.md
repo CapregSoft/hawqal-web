@@ -19,6 +19,8 @@ npm i @capregsoft/hawqal
 
 ### Filters
 By default all Filters are set to `true`. If certain value is not required set that filter to `false`
+- Filters
+
 |   Country Filter      |State Filter   |City Filter
 |----------             |----------     |----------
 |country_name           |country_name   |city_id
