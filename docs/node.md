@@ -55,8 +55,7 @@ getData('pakistan');
 ```
 <span style="font-weight:bold;"> Success Response</span>
 
-![countryPackistanWOFILTER](https://user-images.githubusercontent.com/28805723/211772509-962aab93-e085-4ef1-841d-aa4598d56d0d.png)
-
+![countryPackistanWOFILTER](https://user-images.githubusercontent.com/28805723/211792524-1a3be8d0-2295-4951-a810-59f1f8ea643b.png)
 
 To get a country with  Filters put 2nd parameter as an `object` in `getCountry`
 
@@ -73,8 +72,7 @@ getCountryField('pakistan',{
 ```
 <span style="font-weight:bold;"> Success Response</span>
 
-![countryPackistanWFILTER](https://user-images.githubusercontent.com/28805723/211772986-b2a8524e-b5cd-4dba-ad07-c9dccbfc9b3b.png)
-
+![countryPackistanWFILTER](https://user-images.githubusercontent.com/28805723/211792606-988ab5bc-79f7-4696-8862-77b0f008bf03.png)
 
 To get a list of countries with filters use `getCountries`
 
@@ -91,7 +89,7 @@ getCountries({
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![countriesWFILTER](https://user-images.githubusercontent.com/28805723/211773831-7958ce2b-1314-402c-ab5b-1f2340f00a6a.png)
+![countriesWFILTER](https://user-images.githubusercontent.com/28805723/211792647-6597a654-f1dc-4e5b-af70-ef2124f7a788.png)
 
 #### States
 
@@ -104,8 +102,7 @@ getState('punjab');
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![stateWOFILTER](https://user-images.githubusercontent.com/28805723/211774499-c3cefb11-c95a-4190-9ba0-412d9be3b636.png)
-
+![stateWOFILTER](https://user-images.githubusercontent.com/28805723/211792838-9826ecee-af74-4c8e-9ee6-eafba844192e.png)
 
 To get state with filters put `object` as a filter, use the `getState` function:
 
@@ -120,8 +117,7 @@ getState('punjab');
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![stateWFILTER](https://user-images.githubusercontent.com/28805723/211774555-dece10d3-4839-476c-aa72-3eb8a1acadf7.png)
-
+![stateWFILTER](https://user-images.githubusercontent.com/28805723/211792873-3ba243bc-e579-4832-a006-4b9e946681fc.png)
 
 To get a list of all states of specific country with filters use `getStates` function:
 
@@ -137,8 +133,7 @@ allStatesCountry("finland");
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![statesWFIlter](https://user-images.githubusercontent.com/28805723/211774859-5b68702f-f4d6-45b7-95a6-da48c66e2211.png)
-
+![statesWFIlter](https://user-images.githubusercontent.com/28805723/211792905-f060dacb-67bc-4220-9943-f7572eb685ee.png)
 
 #### Cities 
 
@@ -154,8 +149,7 @@ getCity();
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![cityWFIlter](https://user-images.githubusercontent.com/28805723/211774997-fcdf4ff3-94a7-458d-b8b6-58bc16d0f536.png)
-
+![cityWFIlter](https://user-images.githubusercontent.com/28805723/211793000-88dceb78-160b-471f-aa98-4a50d330da3a.png)
 
 To get all cities of specific country with filters use `getCities` function:
 
@@ -172,8 +166,7 @@ getCities('finland','',{
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![citiesCountryWFILTER](https://user-images.githubusercontent.com/28805723/211775158-2efa9b2c-178b-49cc-a046-743eea520bb1.png)
-
+![citiesCountryWFILTER](https://user-images.githubusercontent.com/28805723/211793089-4b7aeb0f-f63b-4098-b005-8aa1cec215ae.png)
 
 To get all cities of specific state of any country with filters use `getCities` function:
 
@@ -190,7 +183,7 @@ getCities('','Kainuu',{
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![cityStateWFILTER](https://user-images.githubusercontent.com/28805723/211775218-d03268f5-9233-420a-ba48-e08c3ad16444.png)
+![cityStateWFILTER](https://user-images.githubusercontent.com/28805723/211793156-ef170ca5-5fe1-43a3-b546-86a860ec0ad7.png)
 
 To get all cities of specific state and specific country with filters use `getCities` function:
 
@@ -207,8 +200,7 @@ getCities('pakistan','punjab',{
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![citiesCSWFILTER](https://user-images.githubusercontent.com/28805723/211775335-20fb01e5-07f1-4e3f-beae-15d6add996ea.png)
-
+![citiesCSWFILTER](https://user-images.githubusercontent.com/28805723/211793208-329cfad4-9e0f-4580-81c0-9d207f63a60b.png)
 
 <span style="font-weight:bold;"> Error Response</span>
 
