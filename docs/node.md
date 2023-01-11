@@ -49,117 +49,47 @@ Use `Asyc` and `await` to get meaningful response
 To get a country details witout filter, use the `getCountry` function: with country Name
 
 ```js
-const worldData = require("@capregsoft/hawqal");
-const getData = async (country) => console.log(await worldData.getCountry(country));
+const hawqal = require("@capregsoft/hawqal");
+const getData = async (country) => console.log(await hawqal.getCountry(country));
 getData('pakistan');
 ```
-
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  {
-    country_name: 'Pakistan',
-    iso_code: 'PAK',
-    phone_code: '+92',
-    capital: 'Islamabad',
-    currency: 'PKR',
-    currency_name: 'Pakistani rupee',
-    currency_symbol: '₨',
-    country_domain: '.pk',
-    region: 'Asia',
-    subregion: 'Southern Asia',
-    timezone: 'Asia ',
-    UTC: ' 05:00  ',
-    latitude: '30',
-    longitude: '70'
-  }
-]
-```
+![countryPackistanWOFILTER](https://user-images.githubusercontent.com/28805723/211792524-1a3be8d0-2295-4951-a810-59f1f8ea643b.png)
 
 To get a country with  Filters put 2nd parameter as an `object` in `getCountry`
 
 ```js
-const getCountryField = async () =>
+const getCountryField = async (countryName,filters) =>
   console.log(
-    await hawqal.getCountry('pakistan',{
+    await hawqal.getCountry(countryName,filters)
+  );
+getCountryField('pakistan',{
       phone_code: false,
       iso_code: false,
       country_name:false
-    })
-  );
-getCountryField();
+    });
 ```
-
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  {
-    capital: 'Islamabad',
-    currency: 'PKR',
-    currency_name: 'Pakistani rupee',
-    currency_symbol: '₨',
-    country_domain: '.pk',
-    region: 'Asia',
-    subregion: 'Southern Asia',
-    timezone: 'Asia ',
-    UTC: ' 05:00  ',
-    latitude: '30',
-    longitude: '70'
-  }
-]
-```
+![countryPackistanWFILTER](https://user-images.githubusercontent.com/28805723/211792606-988ab5bc-79f7-4696-8862-77b0f008bf03.png)
 
 To get a list of countries with filters use `getCountries`
 
 ```js
-const getCountries = async () =>
+const getCountries = async (filters) =>
   console.log(
-    await hawqal.getCountries({
-     {
+    await hawqal.getCountries(filters));
+getCountries({
       phone_code: false,
       iso_code: false,
       country_name:false
-    }
-    )
-  );
-getCountries();
+     });
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  {
-    capital: 'Kabul',
-    currency: 'AFN',
-    currency_name: 'Afghan afghani',
-    currency_symbol: '؋',
-    country_domain: '.af',
-    region: 'Asia',
-    subregion: 'Southern Asia',
-    timezone: 'Asia ',
-    UTC: ' 04:30  ',
-    latitude: '33',
-    longitude: '65'
-  },
-  {
-    capital: 'Mariehamn',
-    currency: 'EUR',
-    currency_name: 'Euro',
-    currency_symbol: '€',
-    country_domain: '.ax',
-    region: 'Europe',
-    subregion: 'Northern Europe',
-    timezone: 'Europe ',
-    UTC: ' 02:00  ',
-    latitude: '60.116667',
-    longitude: '19.9'
-  },
-  ....
-]
-```
+![countriesWFILTER](https://user-images.githubusercontent.com/28805723/211792647-6597a654-f1dc-4e5b-af70-ef2124f7a788.png)
 
 #### States
 
@@ -172,24 +102,8 @@ getState('punjab');
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  {
-    state_id: 4015,
-    state_name: 'Punjab',
-    country_name: 'India',
-    latitude: '31.1471305',
-    longitude: '75.3412179'
-  },
-  {
-    state_id: 3176,
-    state_name: 'Punjab',
-    country_name: 'Pakistan',
-    latitude: '31.1471305',
-    longitude: '75.3412179'
-  }
-]
-```
+![stateWOFILTER](https://user-images.githubusercontent.com/28805723/211792838-9826ecee-af74-4c8e-9ee6-eafba844192e.png)
+
 To get state with filters put `object` as a filter, use the `getState` function:
 
 ```js
@@ -203,16 +117,7 @@ getState('punjab');
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  { country_name: 'India', 
-    latitude: '31.1471305' 
-  },
-  { country_name: 'Pakistan', 
-    latitude: '31.1471305' 
-  }
-]
-```
+![stateWFILTER](https://user-images.githubusercontent.com/28805723/211792873-3ba243bc-e579-4832-a006-4b9e946681fc.png)
 
 To get a list of all states of specific country with filters use `getStates` function:
 
@@ -228,29 +133,7 @@ allStatesCountry("finland");
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  { country_name: 'Finland', latitude: '60.1785247' },
-  { country_name: 'Finland', latitude: '62.5666743' },
-  { country_name: 'Finland', latitude: '63.5621735' },
-  { country_name: 'Finland', latitude: '60.3627914' },
-  { country_name: 'Finland', latitude: '64.3736564' },
-  { country_name: 'Finland', latitude: '60.780512' },
-  { country_name: 'Finland', latitude: '67.9222304' },
-  { country_name: 'Finland', latitude: '62.8062078' },
-  { country_name: 'Finland', latitude: '65.279493' },
-  { country_name: 'Finland', latitude: '63.08448' },
-  { country_name: 'Finland', latitude: '63.1181757' },
-  { country_name: 'Finland', latitude: '61.3230041' },
-  { country_name: 'Finland', latitude: '61.6986918' },
-  { country_name: 'Finland', latitude: '61.5932758' },
-  { country_name: 'Finland', latitude: '61.1181949' },
-  { country_name: 'Finland', latitude: '62.9433099' },
-  { country_name: 'Finland', latitude: '61.6945148' },
-  { country_name: 'Finland', latitude: '60.907015' },
-  { country_name: 'Finland', latitude: '60.21872' }
-]
-```
+![statesWFIlter](https://user-images.githubusercontent.com/28805723/211792905-f060dacb-67bc-4220-9943-f7572eb685ee.png)
 
 #### Cities 
 
@@ -266,23 +149,13 @@ getCity();
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  {
-    city_id: 85475,
-    city_name: 'Islamabad',
-    country_name: 'Pakistan',
-    latitude: '33.72148',
-    longitude: '73.04329'
-  }
-]
-```
+![cityWFIlter](https://user-images.githubusercontent.com/28805723/211793000-88dceb78-160b-471f-aa98-4a50d330da3a.png)
 
 To get all cities of specific country with filters use `getCities` function:
 
 ```js
 const getCities = async (country,state,filter) => console.log(await hawqal.getCities(country,state,filter));
-getCities('findland','',{
+getCities('finland','',{
   state_id:false,
   state_name:false
 });
@@ -293,32 +166,8 @@ getCities('findland','',{
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-   {
-    city_id: 38949,
-    city_name: 'Nagu',
-    country_name: 'Finland',
-    latitude: '60.19375',
-    longitude: '21.90972'
-  },
-  {
-    city_id: 38955,
-    city_name: 'Nousiainen',
-    country_name: 'Finland',
-    latitude: '60.60416',
-    longitude: '22.07926'
-  },
-  {
-    city_id: 38963,
-    city_name: 'Oripää',
-    country_name: 'Finland',
-    latitude: '60.85',
-    longitude: '22.68333'
-  },
-  ....
-]
-```
+![citiesCountryWFILTER](https://user-images.githubusercontent.com/28805723/211793089-4b7aeb0f-f63b-4098-b005-8aa1cec215ae.png)
+
 To get all cities of specific state of any country with filters use `getCities` function:
 
 ```js
@@ -334,32 +183,8 @@ getCities('','Kainuu',{
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  {
-    city_name: 'Hyrynsalmi',
-    state_name: 'Kainuu',
-    country_name: 'Finland',
-    latitude: '64.66667',
-    longitude: '28.53333'
-  },
-  {
-    city_name: 'Kajaani',
-    state_name: 'Kainuu',
-    country_name: 'Finland',
-    latitude: '64.22728',
-    longitude: '27.72846'
-  },
-  {
-    city_name: 'Kuhmo',
-    state_name: 'Kainuu',
-    country_name: 'Finland',
-    latitude: '64.13333',
-    longitude: '29.51667'
-  },
-  ...
-]
-```
+![cityStateWFILTER](https://user-images.githubusercontent.com/28805723/211793156-ef170ca5-5fe1-43a3-b546-86a860ec0ad7.png)
+
 To get all cities of specific state and specific country with filters use `getCities` function:
 
 ```js
@@ -375,39 +200,7 @@ getCities('pakistan','punjab',{
 
 <span style="font-weight:bold;"> Success Response</span>
 
-```
-[
-  {
-      city_name: 'Jand',
-      state_name: 'Punjab',
-      country_name: 'Pakistan',
-      latitude: '33.43304',
-      longitude: '72.01877'
-    },
-    {
-      city_name: 'Jandiala Sher Khan',
-      state_name: 'Punjab',
-      country_name: 'Pakistan',
-      latitude: '31.82098',
-      longitude: '73.91815'
-    },
-    {
-      city_name: 'Jaranwala',
-      state_name: 'Punjab',
-      country_name: 'Pakistan',
-      latitude: '31.3332',
-      longitude: '73.41868'
-    },
-    {
-      city_name: 'Jatoi Shimali',
-      state_name: 'Punjab',
-      country_name: 'Pakistan',
-      latitude: '29.51827',
-      longitude: '70.84474'
-    },
-    ...
-]
-```
+![citiesCSWFILTER](https://user-images.githubusercontent.com/28805723/211793208-329cfad4-9e0f-4580-81c0-9d207f63a60b.png)
 
 <span style="font-weight:bold;"> Error Response</span>
 
