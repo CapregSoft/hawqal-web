@@ -55,7 +55,27 @@ getData('pakistan');
 ```
 <span style="font-weight:bold;"> Success Response</span>
 
-![countryPackistanWOFILTER](https://user-images.githubusercontent.com/28805723/211792524-1a3be8d0-2295-4951-a810-59f1f8ea643b.png)
+```
+[
+  {
+    country_name: 'Pakistan',
+    iso_code: 'PAK',
+    phone_code: '+92',
+    capital: 'Islamabad',
+    currency: 'PKR',
+    currency_name: 'Pakistani rupee',
+    currency_symbol: '₨',
+    country_domain: '.pk',
+    region: 'Asia',
+    subregion: 'Southern Asia',
+    timezone: 'Asia ',
+    UTC: ' 05:00  ',
+    latitude: '30',
+    longitude: '70'
+  }
+]
+
+```
 
 To get a country with  Filters put 2nd parameter as an `object` in `getCountry`
 
@@ -65,14 +85,16 @@ const getCountryField = async (countryName,filters) =>
     await hawqal.getCountry(countryName,filters)
   );
 getCountryField('pakistan',{
-      phone_code: false,
-      iso_code: false,
-      country_name:false
+      phone_code: true,
+      iso_code: true,
+      country_name:true
     });
 ```
 <span style="font-weight:bold;"> Success Response</span>
 
-![countryPackistanWFILTER](https://user-images.githubusercontent.com/28805723/211792606-988ab5bc-79f7-4696-8862-77b0f008bf03.png)
+```
+[ { phone_code: '+92', iso_code: 'PAK', country_name: 'Pakistan' } ]
+```
 
 To get a list of countries with filters use `getCountries`
 
@@ -81,15 +103,29 @@ const getCountries = async (filters) =>
   console.log(
     await hawqal.getCountries(filters));
 getCountries({
-      phone_code: false,
-      iso_code: false,
-      country_name:false
+      phone_code: true,
+      iso_code: true,
+      country_name:true
      });
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![countriesWFILTER](https://user-images.githubusercontent.com/28805723/211792647-6597a654-f1dc-4e5b-af70-ef2124f7a788.png)
+```
+[
+  { 
+    phone_code: '+93', 
+    iso_code: 'AFG', 
+    country_name: 'Afghanistan' 
+  },
+  {
+    phone_code: '+340',
+    iso_code: 'ALA',
+    country_name: 'Aland Islands'
+  },
+  ...
+]
+  ```
 
 #### States
 
@@ -102,110 +138,213 @@ getState('punjab');
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![stateWOFILTER](https://user-images.githubusercontent.com/28805723/211792838-9826ecee-af74-4c8e-9ee6-eafba844192e.png)
+```
+[
+  {
+    state_id: 4015,
+    state_name: 'Punjab',
+    country_name: 'India',
+    latitude: '31.1471305',
+    longitude: '75.3412179'
+  },
+  {
+    state_id: 3176,
+    state_name: 'Punjab',
+    country_name: 'Pakistan',
+    latitude: '31.1471305',
+    longitude: '75.3412179'
+  }
+]
+```
 
 To get state with filters put `object` as a filter, use the `getState` function:
 
 ```js
 const getState = async (state) => console.log(await hawqal.getState(state,{
-  longitude:false,
-  state_name:false,
-  state_id:false
+  longitude:true,
+  state_name:true,
+  country_name:true
 }));
 getState('punjab');
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![stateWFILTER](https://user-images.githubusercontent.com/28805723/211792873-3ba243bc-e579-4832-a006-4b9e946681fc.png)
-
+```
+[
+  { 
+    longitude: '75.3412179', 
+    state_name: 'Punjab', 
+    country_name: 'India' 
+  },
+  { 
+    longitude: '75.3412179', 
+    state_name: 'Punjab', 
+    country_name: 'Pakistan'
+  }
+]
+```
 To get a list of all states of specific country with filters use `getStates` function:
 
 ```js
 const allStatesCountry = async (country) =>
   console.log(await hawqal.getStates(country,{
-    longitude:false,
-    state_name:false,
-    state_id:false
+    longitude:true,
+    state_name:true,
+    country_name:true
 }));
 allStatesCountry("finland");
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![statesWFIlter](https://user-images.githubusercontent.com/28805723/211792905-f060dacb-67bc-4220-9943-f7572eb685ee.png)
-
+```
+[
+  {
+    longitude: '19.9156105',
+    state_name: 'Åland Islands',
+    country_name: 'Finland'
+  },
+  {
+    longitude: '25.5549445',
+    state_name: 'Central Finland',
+    country_name: 'Finland'
+  },
+  {
+    longitude: '24.0013631',
+    state_name: 'Central Ostrobothnia',
+    country_name: 'Finland'
+  },
+  ...
+]
+```
 #### Cities 
 
 To get a city detail with filters use `getCity` function:
 
 ```js
 const getCity = async () => console.log(await hawqal.getCity('islamabad',{
-  state_id:false,
-  state_name:false
+    city_name:true,
+    state_name:true,
+    country_name:true
 }));
 getCity();
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![cityWFIlter](https://user-images.githubusercontent.com/28805723/211793000-88dceb78-160b-471f-aa98-4a50d330da3a.png)
+```
+[
+  {
+    city_name: 'Islamabad',
+    state_name: 'Islamabad Capital Territory',
+    country_name: 'Pakistan'
+  }
+]
+```
 
 To get all cities of specific country with filters use `getCities` function:
 
 ```js
 const getCities = async (country,state,filter) => console.log(await hawqal.getCities(country,state,filter));
 getCities('finland','',{
-  state_id:false,
-  state_name:false
+    city_name:true,
+    state_name:true,
+    country_name:true
 });
-//first: country
-//second: state
-//third:  filter
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![citiesCountryWFILTER](https://user-images.githubusercontent.com/28805723/211793089-4b7aeb0f-f63b-4098-b005-8aa1cec215ae.png)
+```
+[
+  {
+    city_name: 'Äänekoski',
+    state_name: 'Central Finland',
+    country_name: 'Finland'
+  },
+  {
+    city_name: 'Hankasalmi',
+    state_name: 'Central Finland',
+    country_name: 'Finland'
+  },
+  {
+    city_name: 'Jämsä',
+    state_name: 'Central Finland',
+    country_name: 'Finland'
+  },
+  ...
+]
+```
+
 
 To get all cities of specific state of any country with filters use `getCities` function:
 
 ```js
 const getCities = async (country,state,filter) => console.log(await hawqal.getCities(country,state,filter));
 getCities('','Kainuu',{
-  state_id:false,
-  city_id:false
+    city_name:true,
+    state_name:true,
+    country_name:true
 });
-//first: country
-//second: state
-//third:  filter
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![cityStateWFILTER](https://user-images.githubusercontent.com/28805723/211793156-ef170ca5-5fe1-43a3-b546-86a860ec0ad7.png)
+```
+[
+  {
+    city_name: 'Hyrynsalmi',
+    state_name: 'Kainuu',
+    country_name: 'Finland'
+  },
+  {
+    city_name: 'Kajaani',
+    state_name: 'Kainuu',
+    country_name: 'Finland'
+  },
+  { 
+    city_name: 'Kuhmo', 
+    state_name: 'Kainuu', 
+    country_name: 'Finland' 
+  },
+  ...
+]
+
+```
 
 To get all cities of specific state and specific country with filters use `getCities` function:
 
 ```js
 const getCities = async (country,state,filter) => console.log(await hawqal.getCities(country,state,filter));
 getCities('pakistan','punjab',{
-  state_id:false,
-  city_id:false
+    city_name:true,
+    state_name:true,
+    country_name:true
 });
-//first: country
-//second: state
-//third:  filter
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
 
-![citiesCSWFILTER](https://user-images.githubusercontent.com/28805723/211793208-329cfad4-9e0f-4580-81c0-9d207f63a60b.png)
+```
+[
+  {
+    city_name: 'Ahmadpur Sial',
+    state_name: 'Punjab',
+    country_name: 'Pakistan'
+  },
+  {
+    city_name: 'Ahmedpur East',
+    state_name: 'Punjab',
+    country_name: 'Pakistan'
+  },
+  {
+    city_name: 'Alipur Chatha',
+    state_name: 'Punjab',
+    country_name: 'Pakistan'
+  },
+  ...
+]
 
-<span style="font-weight:bold;"> Error Response</span>
-
-```js
-[];
 ```
 
-Db connection Error!!!
