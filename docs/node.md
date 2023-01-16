@@ -93,20 +93,26 @@ getCountryField('pakistan',{
 <span style="font-weight:bold;"> Success Response</span>
 
 ```
-[ { phone_code: '+92', iso_code: 'PAK', country_name: 'Pakistan' } ]
+[ 
+  { 
+    phone_code: '+92', 
+    iso_code: 'PAK', 
+    country_name: 'Pakistan' 
+  } 
+]
 ```
 
 To get a list of countries with filters use `getCountries`
 
 ```js
 const getCountries = async (filters) =>
-  console.log(
+    console.log(
     await hawqal.getCountries(filters));
-getCountries({
+    getCountries({
       phone_code: true,
       iso_code: true,
       country_name:true
-     });
+    });
 ```
 
 <span style="font-weight:bold;"> Success Response</span>
@@ -188,7 +194,7 @@ To get a list of all states of specific country with filters use `getStates` fun
 
 ```js
 const allStatesCountry = async (country) =>
-  console.log(await hawqal.getStates(country,{
+    console.log(await hawqal.getStates(country,{
     longitude:true,
     state_name:true,
     country_name:true
