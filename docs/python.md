@@ -40,8 +40,8 @@ set that filter to `True`
 ## Countries
 - #### Returns Countries along with Filters
     ```python
-     hawqal.getCountries()
-
+     >>> hawqal.getCountries()
+    
      [
         {
             "country_name": "Afghanistan",
@@ -83,7 +83,8 @@ set that filter to `True`
    
 - #### Returns Countries with Selected Filters
     ```python
-    hawqal.getCountries(filter=hawqal.CountryFilter(iso_code=True,latitude=True,longitude=True))
+    >>> hawqal.getCountries(filter=hawqal.CountryFilter(iso_code=True,latitude=True,longitude=True))
+    
     [
         {
             "iso_code": "AFG", 
@@ -106,7 +107,8 @@ set that filter to `True`
     
 - #### Returns single Country data
     ```python
-    hawqal.getCountry(country_name="pakistan",filter=hawqal.CountryFilter(currency=True,currency_name=True,country_name=True))
+    >>> hawqal.getCountry(country_name="pakistan",filter=hawqal.CountryFilter(currency=True,currency_name=True,country_name=True))
+    
     [
         {
             "country_name": "Pakistan",
@@ -119,6 +121,8 @@ set that filter to `True`
 ## State
 - #### Returns States along with Filters
     ```python
+    >>> hawqal.getStates()
+    
     [
         {
             "state_id": 3901,
@@ -140,7 +144,8 @@ set that filter to `True`
     
 - #### Returns States of single country
     ```python
-    hawqal.getStates("pakistan")
+    >>> hawqal.getStates("pakistan")
+    
     [
         {
             "state_id": 3172,
@@ -162,8 +167,9 @@ set that filter to `True`
     
 - #### Returns Single State
     ```python
-     hawqal.getState(country_name="pakistan", state_name="sindh")
-     [
+    >>> hawqal.getState(country_name="pakistan", state_name="sindh")
+   
+    [
          {
              "state_id": 3175,
              "state_name": "Sindh",
@@ -176,8 +182,9 @@ set that filter to `True`
    
 - #### Returns Single State with Filters
     ```python
-     hawqal.getState(country_name="pakistan",  state_name="sindh",  filter=hawqal.StateFilter(state_id=False,latitude=True, longitude=True,country_name=True))
-     [
+    >>> hawqal.getState(country_name="pakistan",  state_name="sindh",  filter=hawqal.StateFilter(state_id=False,latitude=True, longitude=True,country_name=True))
+    
+    [
          {
              "country_name": "Pakistan",
              "longitude": "68.5247149",
@@ -189,7 +196,8 @@ set that filter to `True`
 ## Cities
 - #### Returns Cities along with Filters
     ```python
-    hawqal.getCities()
+    >>> hawqal.getCities()
+    
     [
         {
             "city_id": 52,
@@ -215,7 +223,8 @@ set that filter to `True`
     
 - #### Returns Cities of a Country
     ```python
-    hawqal.getCities(country_name='pakistan')
+    >>> hawqal.getCities(country_name='pakistan')
+    
     [
         {
             "city_id": 85368,
@@ -241,8 +250,9 @@ set that filter to `True`
    
 - #### Returns Cities by Country and State
     ```python
-     hawqal.getCities(country_name="pakistan", state_name="punjab")
-     [
+    >>> hawqal.getCities(country_name="pakistan", state_name="punjab")
+    
+    [
          {
              "city_id": 85332, 
              "city_name": "Ahmadpur Sial", 
@@ -267,7 +277,8 @@ set that filter to `True`
     
 - #### Returns Cities with Filters
     ```python
-    hawqal.getCities(country_name="pakistan",  state_name="punjab",  filter=hawqal.CityFilter(latitude=True,city_name=True))
+    >>> hawqal.getCities(country_name="pakistan",  state_name="punjab",  filter=hawqal.CityFilter(latitude=True,city_name=True))
+    
     [
         {
             "city_name": "Ahmadpur Sial",
@@ -287,7 +298,8 @@ set that filter to `True`
     
 - #### Returns Single City along with Filters
     ```python
-    hawqal.getCity(city_name="wah")
+    >>> hawqal.getCity(city_name="wah")
+    
     [
         {
             "city_id": 143779,
