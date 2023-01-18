@@ -165,7 +165,7 @@ hawqal.GetCountry("Pakistan")
 
 ]
   ```
-### State
+### States
 
 - Returns States 
 
