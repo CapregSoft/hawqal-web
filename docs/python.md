@@ -9,10 +9,10 @@ To install the package in Python, run the following command:
 ```
 ### Functions
 - `getCountries()`
-- `getStates()`
-- `getCities()`
 - `getCountry()`
+- `getStates()`
 - `getState()`
+- `getCities()`
 - `getCity()`
 ### Filters
 By default all the Filters are set to `False`. If certain value is not required
@@ -38,9 +38,9 @@ set that filter to `True`
     
 # Usage/Example
 ## Countries
-- #### Returns Countries along with Filters
+- Returns Countries along with Filters
     ```python
-     >>> hawqal.getCountries()
+     hawqal.getCountries()
     
      [
         {
@@ -81,9 +81,9 @@ set that filter to `True`
      ]
     ```
    
-- #### Returns Countries with Selected Filters
+- Returns Countries with Selected Filters
     ```python
-    >>> hawqal.getCountries(filter=hawqal.CountryFilter(iso_code=True,latitude=True,longitude=True))
+    hawqal.getCountries(filter=hawqal.CountryFilter(iso_code=True,latitude=True,longitude=True))
     
     [
         {
@@ -104,10 +104,12 @@ set that filter to `True`
         ...
     ]
     ```
-    
-- #### Returns single Country data
+
+### Country
+
+- Returns single Country data
     ```python
-    >>> hawqal.getCountry(country_name="pakistan",filter=hawqal.CountryFilter(currency=True,currency_name=True,country_name=True))
+    hawqal.getCountry(country_name="pakistan",filter=hawqal.CountryFilter(currency=True,currency_name=True,country_name=True))
     
     [
         {
@@ -118,10 +120,11 @@ set that filter to `True`
     ]
     ```
     
-## State
-- #### Returns States along with Filters
+## States
+
+- Returns States along with Filters
     ```python
-    >>> hawqal.getStates()
+    hawqal.getStates()
     
     [
         {
@@ -142,9 +145,9 @@ set that filter to `True`
     ]
     ```
     
-- #### Returns States of single country
+- Returns States of single country
     ```python
-    >>> hawqal.getStates("pakistan")
+    hawqal.getStates("pakistan")
     
     [
         {
@@ -164,10 +167,10 @@ set that filter to `True`
         ...
     ]
     ```
-    
-- #### Returns Single State
+### State
+- Returns Single State
     ```python
-    >>> hawqal.getState(country_name="pakistan", state_name="sindh")
+    hawqal.getState(country_name="pakistan", state_name="sindh")
    
     [
          {
@@ -180,9 +183,9 @@ set that filter to `True`
      ]
     ```
    
-- #### Returns Single State with Filters
+- Returns Single State with Filters
     ```python
-    >>> hawqal.getState(country_name="pakistan",  state_name="sindh",  filter=hawqal.StateFilter(state_id=False,latitude=True, longitude=True,country_name=True))
+    hawqal.getState(country_name="pakistan",  state_name="sindh",  filter=hawqal.StateFilter(state_id=False,latitude=True, longitude=True,country_name=True))
     
     [
          {
@@ -194,9 +197,9 @@ set that filter to `True`
     ```
    
 ## Cities
-- #### Returns Cities along with Filters
+- Returns Cities along with Filters
     ```python
-    >>> hawqal.getCities()
+    hawqal.getCities()
     
     [
         {
@@ -221,9 +224,9 @@ set that filter to `True`
     ]
     ```
     
-- #### Returns Cities of a Country
+- Returns Cities of a Country
     ```python
-    >>> hawqal.getCities(country_name='pakistan')
+    hawqal.getCities(country_name='pakistan')
     
     [
         {
@@ -248,9 +251,9 @@ set that filter to `True`
     ]
     ```
    
-- #### Returns Cities by Country and State
+- Returns Cities by Country and State
     ```python
-    >>> hawqal.getCities(country_name="pakistan", state_name="punjab")
+    hawqal.getCities(country_name="pakistan", state_name="punjab")
     
     [
          {
@@ -275,9 +278,9 @@ set that filter to `True`
      ] 
     ```
     
-- #### Returns Cities with Filters
+- Returns Cities with Filters
     ```python
-    >>> hawqal.getCities(country_name="pakistan",  state_name="punjab",  filter=hawqal.CityFilter(latitude=True,city_name=True))
+    hawqal.getCities(country_name="pakistan",  state_name="punjab",  filter=hawqal.CityFilter(latitude=True,city_name=True))
     
     [
         {
@@ -295,10 +298,11 @@ set that filter to `True`
         ...
     ]
     ```
-    
-- #### Returns Single City along with Filters
+## City
+
+- Returns Single City along with Filters
     ```python
-    >>> hawqal.getCity(city_name="wah")
+    hawqal.getCity(city_name="wah")
     
     [
         {
