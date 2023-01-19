@@ -44,16 +44,12 @@ By default all Filters set to be `false`. If certain value is required set that 
 
 #### Countries
   
-- Retrieve  Countries 
+  - Returns Countries
 
   ```js
-  const hawqal = require("@capregsoft/hawqal");
   const AllCountries = async () => console.log(await hawqal.getCountries());
   AllCountries();
-  ```
-  <span style="font-weight:bold;"> Success Response</span>
 
-  ```
   [
     {
       country_name: 'Cameroon',
@@ -87,36 +83,48 @@ By default all Filters set to be `false`. If certain value is required set that 
       latitude: '60',
       longitude: '-95'
     },
-    {
-      country_name: 'Cape Verde',
-      iso_code: 'CPV',
-      phone_code: '+238',
-      capital: 'Praia',
-      currency: 'CVE',
-      currency_name: 'Cape Verdean escudo',
-      currency_symbol: '$',
-      country_domain: '.cv',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      timezone: 'Atlantic ',
-      UTC: ' -1:00  ',
-      latitude: '16',
-      longitude: '-24'
-    },
     ...
   ]
 
   ```
 
-- Search Country 
+  - Returns Countries with Filters
+
+  ```js
+  const allCountries = async (filters) =>
+    console.log( await hawqal.getCountries(filters));
+    allCountries({
+      phone_code: true,
+      iso_code: true,
+      country_name:true
+    });
+
+  [
+    { 
+      phone_code: '+93', 
+      iso_code: 'AFG', 
+      country_name: 'Afghanistan' 
+    },
+    {
+      phone_code: '+340',
+      iso_code: 'ALA',
+      country_name: 'Aland Islands'
+    },
+    { 
+      phone_code: '+355', 
+      iso_code: 'ALB', 
+      country_name: 'Albania' 
+    },
+    ...
+  ]
+  ```
+  ### Country
+  - Returns single Country data 
 
   ```js
   const searchCountry = async (countryName) => console.log(await hawqal.getCountry(countryName));
   searchCountry('pakistan');
-  ```
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
+  
   [
     {
       country_name: 'Pakistan',
@@ -137,54 +145,16 @@ By default all Filters set to be `false`. If certain value is required set that 
   ]
   ```
 
-- Show all Countries along `filter`
 
-  ```js
-  const allCountries = async (filters) =>
-    console.log( await hawqal.getCountries(filters));
-    allCountries({
-      phone_code: true,
-      iso_code: true,
-      country_name:true
-    });
 
-  ```
+### States
 
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
-  [
-    { 
-      phone_code: '+93', 
-      iso_code: 'AFG', 
-      country_name: 'Afghanistan' 
-    },
-    {
-      phone_code: '+340',
-      iso_code: 'ALA',
-      country_name: 'Aland Islands'
-    },
-    { 
-      phone_code: '+355', 
-      iso_code: 'ALB', 
-      country_name: 'Albania' 
-    },
-    ...
-  ]
-    ```
-
-#### States
-
-- Retrieve States of all Countries
+  - Returns States
 
   ```js
   const allStates = async () => console.log(await hawqal.getStates());
   allStates();
-  ```
-
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
+ 
   [
     {
       state_id: 3901,
@@ -200,47 +170,14 @@ By default all Filters set to be `false`. If certain value is required set that 
       latitude: '35.1671339',
       longitude: '63.7695384'
     },
-    {
-      state_id: 3875,
-      state_name: 'Baghlan',
-      country_name: 'Afghanistan',
-      latitude: '36.1789026',
-      longitude: '68.7453064'
-    },
     ...
   ]
   ```
 
-- Search specific State 
-  ```js
-  const searchState = async (state) => console.log(await hawqal.getState(state));
-  searchState('punjab');
 
-  ```
+- Return State with Filters
 
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
-  [
-    {
-      state_id: 4015,
-      state_name: 'Punjab',
-      country_name: 'India',
-      latitude: '31.1471305',
-      longitude: '75.3412179'
-    },
-    {
-      state_id: 3176,
-      state_name: 'Punjab',
-      country_name: 'Pakistan',
-      latitude: '31.1471305',
-      longitude: '75.3412179'
-    }
-  ]
-  ```
-- Use of filter 
-
-  ```js
+```js
   const allStatesCountry = async (country,filter) => console.log(await hawqal.getStates(country,filter));
   allStatesCountry("finland",{
       state_name:true,
@@ -248,11 +185,7 @@ By default all Filters set to be `false`. If certain value is required set that 
       longitude:true,
       latitude:true
   });
-  ```
-
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
+  
   [
     {
       state_name: 'Åland Islands',
@@ -275,18 +208,38 @@ By default all Filters set to be `false`. If certain value is required set that 
     ...
   ]
   ```
-#### Cities 
+  ### State
+  - Returns Single State
+```js
+  const searchState = async (state) => console.log(await hawqal.getState(state));
+  searchState('punjab');
 
-- Retrieve Cities of Country
+  [
+    {
+      state_id: 4015,
+      state_name: 'Punjab',
+      country_name: 'India',
+      latitude: '31.1471305',
+      longitude: '75.3412179'
+    },
+    {
+      state_id: 3176,
+      state_name: 'Punjab',
+      country_name: 'Pakistan',
+      latitude: '31.1471305',
+      longitude: '75.3412179'
+    },
+    ...
+  ]
+  ```
+  #### Cities 
+
+  - Returns Cities
 
   ```js
   const getCities = async (country,state,filter) => console.log(await hawqal.getCities(country,state,filter));
   getCities('finland','',{});
-  ```
-
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
+  
   [
     {
       city_id: 39132,
@@ -306,28 +259,15 @@ By default all Filters set to be `false`. If certain value is required set that 
       latitude: '62.38333',
       longitude: '26.43333'
     },
-    {
-      city_id: 38809,
-      city_name: 'Jämsä',
-      state_id: 1511,
-      state_name: 'Central Finland',
-      country_name: 'Finland',
-      latitude: '61.8642',
-      longitude: '25.19002'
-    },
     ...
   ]
   ```
-- Retrieve all Cities within State 
+- Retrieve all Cities with State name
 
-  ```js
+```js
   const getCities = async (country,state,filter) => console.log(await hawqal.getCities(country,state,filter));
   getCities('','Kainuu',{});
-  ```
-
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
+  
   [
     {
       city_id: 38778,
@@ -347,31 +287,18 @@ By default all Filters set to be `false`. If certain value is required set that 
       latitude: '64.22728',
       longitude: '27.72846'
     },
-    {
-      city_id: 38877,
-      city_name: 'Kuhmo',
-      state_id: 1496,
-      state_name: 'Kainuu',
-      country_name: 'Finland',
-      latitude: '64.13333',
-      longitude: '29.51667'
-    },
     ...
   ]
 
   ```
 
+### City
+- Returns Single City
 
-- Search City 
-
-  ```js
+```js
   const searchCity = async (city) => console.log(await hawqal.getCity(city));
   searchCity('islamabad');
-  ```
-
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
+  
   [
     {
       city_id: 85475,
@@ -387,20 +314,16 @@ By default all Filters set to be `false`. If certain value is required set that 
 
 
 
-- Search City `with filter`
+- Returns Single City with Filter
 
-  ```js
+```js
   const searchCity = async (city,filter) => console.log(await hawqal.getCity(city,filter));
   searchCity('islamabad',{
       city_name:true,
       state_name:true,
       country_name:true
   });
-  ```
-
-  <span style="font-weight:bold;"> Success Response</span>
-
-  ```
+  
   [
     {
       city_name: 'Islamabad',
@@ -410,4 +333,3 @@ By default all Filters set to be `false`. If certain value is required set that 
   ]
 
   ```
-
