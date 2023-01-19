@@ -22,27 +22,27 @@ go get github.com/CapregSoft/Hawqal-go
 
 By default all the Filters are set to False. If certain value is not required set that filter to True
 
-| Country Filter             | City Filter    | State Filter |
-| ----------------- | -------------------- |------------------|
-| CountryName  |  CountryName | CountryName |
-| Currency |  StateName | StateName |
-| CurrencyName |  StateId | StateId |
-| CurrencySymbol | CityId | Latitude |
-| Capital | CityName| Longitude |
-| IsoCode | Latitude | 
-| PhoneCode | Longitude |  
-| Region |  
-| Subregion | 
-| CountryDomain | 
-| Timezone | 
-| Zone_city | 
-| UTC | 
-| Latitude | 
-| Longitude | 
+|   Country Filter      |State Filter   |City Filter
+|----------             |----------     |----------
+|country_name           |state_id       |city_id
+|iso_code               |state_name     |city_name
+|phone_code             |country_name     |state_name
+|capital                |longitude      |state_id
+|currency               |latitude       |country_name
+|currency_name          |               |longitude
+|currency_symbol        |               |latitude
+|region
+|subregion
+|country_domain
+|time_zone
+|zone_city
+|UTC
+|longitude
+|latitude
 
-### Usage/Examples
+# Usage/Examples
 
-#### Get Started
+## Get Started
 ```go
 package main
 
@@ -52,12 +52,12 @@ import (
   "log"
 )
 ```
-#### Countries
+# Countries
 
-- Returns Countries 
+- ### Returns Countries 
 
 
-```json
+```go
 hawqal.GetCountries()
 
 [
@@ -102,9 +102,9 @@ hawqal.GetCountries()
 
 
 
-- Returns Countries with Filters
+- ### Returns Countries with Filters
 
-```json
+```go
 hawqal.GetCountries(&models.CountryFilter{Currency: true, Currency_name: true, Currency_symbol: true})
 
 [
@@ -123,11 +123,11 @@ hawqal.GetCountries(&models.CountryFilter{Currency: true, Currency_name: true, C
 ]
   ```
 
-### Country
-- Returns Single Country along with Filters
+# Country
+- ### Returns Single Country along with Filters
 
 
-```json
+```go
 hawqal.GetCountry("pakistan", &models.CountryFilter{Currency: true, Country_name: true, Currency_symbol: true})
 
 [
@@ -139,9 +139,9 @@ hawqal.GetCountry("pakistan", &models.CountryFilter{Currency: true, Country_name
 ]
   ```
 
-- Returns single Country data
+- ### Returns single Country data
 
-```json
+```go
 hawqal.GetCountry("Pakistan")
 
 [
@@ -165,11 +165,11 @@ hawqal.GetCountry("Pakistan")
 
 ]
   ```
-### States
+# States
 
-- Returns States 
+- ### Returns States 
 
-```json
+```go
 hawqal.GetStates()
 
 [
@@ -193,9 +193,9 @@ hawqal.GetStates()
 ]
   ```
 
-- Returns States of single country
+- ### Returns States of single country
 
-```json
+```go
 hawqal.GetStates(&models.StateFilter{CountryName: "pakistan"})
 
 [
@@ -218,11 +218,11 @@ hawqal.GetStates(&models.StateFilter{CountryName: "pakistan"})
 ]
   ```
 
-### State
+# State
 
-- Returns Single State
+- ### Returns Single State
 
-```json
+```go
 hawqal.GetState("punjab")
 
 [
@@ -243,9 +243,9 @@ hawqal.GetState("punjab")
 ]
   ```
 
-- Returns Single State with Filters
+- ### Returns Single State with Filters
 
-```json
+```go
 hawqal.GetState("punjab", &models.StateFilter{CountryName: "pakistan"})
 
 [
@@ -260,11 +260,11 @@ hawqal.GetState("punjab", &models.StateFilter{CountryName: "pakistan"})
 
   ```
 
-  ### Cities
+# Cities
 
-  - Returns Cities 
+- ### Returns Cities 
 
-```json
+```go
 hawqal.GetCities()
 
 [
@@ -282,9 +282,9 @@ hawqal.GetCities()
 ]
   ```
 
- - Returns Cities of a Country
+- ### Returns Cities of a Country
 
-```json
+```go
 hawqal.GetCities(&models.CityFilter{CountryName: "pakistan"})
 
 [
@@ -312,9 +312,9 @@ hawqal.GetCities(&models.CityFilter{CountryName: "pakistan"})
 ]
 ```
 
-- Returns Cities with Filters
+- ### Returns Cities with Filters
  
-```json
+```go
 hawqal.GetCities(&models.CityFilter{StateName: "Punjab", Filter: &models.CityData{CityId: true, CityName: true }})
 
 [
@@ -332,9 +332,9 @@ hawqal.GetCities(&models.CityFilter{StateName: "Punjab", Filter: &models.CityDat
 ```
 
 
-- Returns Cities by Country and State
+- ### Returns Cities by Country and State
 
-```json
+```go
 hawqal.GetCities(&models.CityFilter{CountryName: "pakistan", StateName: "punjab", Filter: &models.CityData{Latitude: true, Longitude: true}})
 
 [
@@ -352,12 +352,12 @@ hawqal.GetCities(&models.CityFilter{CountryName: "pakistan", StateName: "punjab"
   ```
 
 
-### City
+# City
 
-- Returns Single City 
+- ### Returns Single City 
 
 
-```json
+```go
 hawqal.GetCity("wah")
 
 [
@@ -374,10 +374,10 @@ hawqal.GetCity("wah")
 ]
   ```
 
-- Returns Single City with Filter
+- ### Returns Single City with Filter
 
 
-```json
+```go
 hawqal.GetCity("Wah", &models.CityFilter{CountryName: "Pakistan", StateName: "Punjab"})
 
 [
@@ -392,3 +392,4 @@ hawqal.GetCity("Wah", &models.CityFilter{CountryName: "Pakistan", StateName: "Pu
   }
 ]
   ```
+
