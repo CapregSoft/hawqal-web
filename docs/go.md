@@ -102,7 +102,7 @@ hawqal.GetCountries()
 
 
 
-####  Returns Countries with Filters
+- Returns Countries with Filters
 
 ```json
 hawqal.GetCountries(&models.CountryFilter{Currency: true, Currency_name: true, Currency_symbol: true})
@@ -219,6 +219,7 @@ hawqal.GetStates(&models.StateFilter{CountryName: "pakistan"})
   ```
 
 ### State
+
 - Returns Single State
 
 ```json
@@ -309,7 +310,8 @@ hawqal.GetCities(&models.CityFilter{CountryName: "pakistan"})
   ...
 
 ]
-  ```
+```
+
 - Returns Cities with Filters
  
 ```json
@@ -327,7 +329,7 @@ hawqal.GetCities(&models.CityFilter{StateName: "Punjab", Filter: &models.CityDat
   }
   ...
 ]
-  ```
+```
 
 
 - Returns Cities by Country and State
