@@ -20,7 +20,7 @@ go get github.com/CapregSoft/Hawqal-go
 
 ## Filters
 
-By default all the Filters are set to False. If certain value is not required set that filter to True
+By default, all filters are 'false' to ensure that only the desired data is displayed.
 
 |   Country Filter      |State Filter   |City Filter
 |----------             |----------     |----------
@@ -122,6 +122,8 @@ hawqal.GetCountries(&models.CountryFilter{Currency: true, Currency_name: true, C
 
 ]
   ```
+  
+   
 
 # Country
 - ### Returns Single Country along with Filters
